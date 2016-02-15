@@ -13,7 +13,7 @@ Shipment Deploy is a docker container that will manage deployments on your serve
 ## Usage
 
 ```sh
-docker run -e GH_USERNAME=username -e GH_TOKEN=token -e SECRET=secret -p 5000 shipment/deploy
+docker run -v /var/run/docker.sock:/var/run/docker.sock -e GH_USERNAME=username -e GH_TOKEN=token -e SECRET=secret -p 5000 shipment/deploy
 ```
 
 ## API
