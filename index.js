@@ -15,7 +15,7 @@ if (!config.username || !config.token || !config.secret) {
 const logger = new Logger(config.logger);
 const deploy = new Deploy(config.repoPath, config.username, config.token, logger);
 const githubHook = new GithubHook(config.secret, logger);
-const server = new Server(config.port, deploy, githubHook);
+const server = new Server(config.port, deploy, config.secret, githubHook);
 
 server.start((err) => {
   if (err) {
