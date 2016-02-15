@@ -10,3 +10,13 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - && \
 
 #DOCKER
 RUN curl -sSL https://get.docker.com/ | sh
+
+#NODEMON
+RUN npm i -g nodemon
+
+#SETUP
+RUN mkdir -p /repos
+
+WORKDIR /app
+
+CMD ["node", "index.js"]
