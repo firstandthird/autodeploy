@@ -3,3 +3,5 @@ username: '{{ENV.GH_USERNAME}}'
 token: '{{ENV.GH_TOKEN}}'
 secret: '{{ENV.SECRET || "deploy"}}'
 repoPath: '/repos'
+logger:
+  type: 'json'

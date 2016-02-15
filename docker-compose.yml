@@ -2,6 +2,7 @@ server:
   build: '.'
   command: 'nodemon index.js'
   environment:
+    NODE_ENV: 'dev'
     PORT: 5000
     GH_USERNAME:
     GH_TOKEN:
