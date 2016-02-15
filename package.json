@@ -1,12 +1,13 @@
 {
-  "name": "autodeploy",
+  "name": "deploy",
+  "private": true,
   "description": "",
-  "homepage": "https://github.com/firstandthird/autodeploy",
+  "homepage": "https://github.com/shipment/deploy",
   "author": "First+Third",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firstandthird/autodeploy.git"
+    "url": "https://github.com/shipment/deploy.git"
   },
   "scripts": {
     "lint": "eslint ."
