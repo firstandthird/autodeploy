@@ -17,6 +17,7 @@ RUN npm i -g nodemon
 #SETUP
 RUN mkdir -p /repos
 
+ADD . /app
 WORKDIR /app
 
 CMD ["node", "index.js"]
