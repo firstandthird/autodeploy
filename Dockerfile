@@ -27,4 +27,4 @@ ENV PATH /app/node_modules/.bin:$PATH
 ADD . /app/server
 WORKDIR /app/server
 
-CMD ["node", "index.js"]
+CMD node index.js
