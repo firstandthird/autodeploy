@@ -3,7 +3,7 @@ const config = require('confi')();
 const Server = require('./lib/server');
 const Deploy = require('./lib/deploy');
 const GithubHook = require('./lib/github-hook');
-const Logger = require('./lib/logger');
+const Logger = require('logr');
 
 if (!config.username || !config.token || !config.secret) {
   /*eslint-disable no-console*/
@@ -12,14 +12,14 @@ if (!config.username || !config.token || !config.secret) {
   process.exit(1);
 }
 
-const logger = new Logger(config.logger);
-const deploy = new Deploy(config.env, config.repoPath, config.username, config.token, logger);
-const githubHook = new GithubHook(config.secret, logger);
+const log = new Logger(config.logger);
+const deploy = new Deploy(config.env, config.repoPath, config.username, config.token, log);
+const githubHook = new GithubHook(config.secret, log);
 const server = new Server(config.port, deploy, config.secret, githubHook);
 
 server.start((err) => {
   if (err) {
     throw err;
   }
-  logger.log(['server'], 'Server started');
+  log(['server'], 'Server started');
 });
