@@ -5,3 +5,5 @@ secret: '{{ENV.SECRET || "deploy"}}'
 repoPath: '/repos'
 logger:
   type: 'json'
+  jsonOptions:
+    tagsObject: true
