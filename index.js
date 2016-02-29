@@ -21,5 +21,5 @@ server.start((err) => {
   if (err) {
     throw err;
   }
-  log(['server'], 'Server started');
+  log(['server', 'start'], 'Server started');
 });
