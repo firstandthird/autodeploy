@@ -7,6 +7,7 @@ server:
     GH_USERNAME:
     GH_TOKEN:
     SECRET:
+    BRANCH_WHITELIST:
   ports:
     - '8080:5000'
   volumes:
