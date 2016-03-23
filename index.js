@@ -12,6 +12,7 @@ if (!config.username || !config.token || !config.secret) {
   process.exit(1);
 }
 
+config.branchWhitelist = config.branchWhitelist ? config.branchWhitelist.split(',') : [];
 const log = new Logger(config.logger);
 const deploy = new Deploy(config.env, config.repoPath, config.username, config.token, log);
 const githubHook = new GithubHook(config.secret, config.branchWhitelist, log);
