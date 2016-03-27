@@ -24,3 +24,9 @@ server.start((err) => {
   }
   log(['server', 'notice', 'server-start'], 'Server started');
 });
+
+process.on('SIGTERM', () => {
+  server.hapiServer.stop({ timeout: 5 * 1000 }, () => {
+    process.exit(0);
+  });
+});
