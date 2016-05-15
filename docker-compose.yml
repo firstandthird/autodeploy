@@ -13,3 +13,4 @@ server:
   volumes:
     - '/var/run/docker.sock:/var/run/docker.sock'
     - '.:/app/server'
+    - './example-configs:/configs'

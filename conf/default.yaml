@@ -4,6 +4,7 @@ token: '{{ENV.GH_TOKEN}}'
 secret: '{{ENV.SECRET || "deploy"}}'
 branchWhitelist: '{{ENV.BRANCH_WHITELIST}}'
 repoPath: '/repos'
+sharedConfigPath: '/configs'
 logger:
   type: 'json'
   renderOptions:

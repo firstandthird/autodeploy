@@ -1,0 +1,3 @@
+{
+  "dockerargs": "-e SOME_VAR=1"
+}
