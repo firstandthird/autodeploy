@@ -10,6 +10,7 @@
     "url": "https://github.com/shipment/deploy.git"
   },
   "scripts": {
+    "start": "node index.js",
     "lint": "eslint ."
   },
   "devDependencies": {
