@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:trusty
 
 #GIT
 RUN apt-get update && \
@@ -9,7 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
       apt-get install -y nodejs
 
 #DOCKER
-RUN curl -sSL https://get.docker.com/ | sh
+RUN curl -sSL https://get.docker.com/ | sed 's/docker-engine/docker-engine=1.10.3-0~trusty/' | sh
 
 VOLUME /root/.npm
 
