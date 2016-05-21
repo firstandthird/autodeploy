@@ -1,6 +1,7 @@
 server:
   build: '.'
-  command: 'nodemon index.js'
+  #command: 'nodemon --exec "npm run lint && npm start"'
+  command: 'nodemon'
   environment:
     NODE_ENV: 'dev'
     PORT: 5000

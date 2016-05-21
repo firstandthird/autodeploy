@@ -10,20 +10,17 @@
     "url": "https://github.com/shipment/deploy.git"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "rapptor",
     "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^5.0.1",
-    "eslint-config-firstandthird": "^1.4.0"
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-config-firstandthird": "^2.0.0"
   },
   "dependencies": {
     "async": "2.0.0-rc.4",
-    "confi": "^1.1.0",
-    "hapi": "^13.0.0",
-    "hapi-logr": "^1.0.0",
-    "logr": "^1.0.0",
-    "varson": "0.0.2"
+    "rapptor": "firstandthird/rapptor#8e3529c",
+    "varson": "0.1.0"
   }
 }
