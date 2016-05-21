@@ -21,6 +21,7 @@
   "dependencies": {
     "async": "2.0.0-rc.4",
     "rapptor": "firstandthird/rapptor#8e3529c",
-    "varson": "0.1.0"
+    "varson": "0.1.0",
+    "obj2args": "0.0.1"
   }
 }
