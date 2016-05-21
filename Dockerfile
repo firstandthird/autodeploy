@@ -21,7 +21,7 @@ RUN mkdir -p /repos
 
 #APP
 ADD package.json /app/
-RUN cd /app && npm install
+RUN cd /app && npm install --silent
 ENV PATH /app/node_modules/.bin:$PATH
 
 ADD . /app/server
