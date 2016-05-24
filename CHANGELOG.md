@@ -1,4 +1,12 @@
 
+0.0.6 / 2016-05-24
+==================
+
+  * added /api/info to display version of deploy
+  * deprecation warning if dockerargs is a string
+  * fixed bug if no deploy.json found
+  * fixed sharedConfigPath issue
+
 0.0.5 / 2016-05-23
 ==================
 
