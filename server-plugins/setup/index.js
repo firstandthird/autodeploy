@@ -13,6 +13,7 @@ exports.register = function(server, options, next) {
   const githubHook = new GithubHook(config.secret, config.branchWhitelist, server.log.bind(server));
 
   server.decorate('server', 'deploy', deploy);
+  server.decorate('server', 'docker', deploy.docker);
   server.decorate('server', 'githubHook', githubHook);
 
   next();
