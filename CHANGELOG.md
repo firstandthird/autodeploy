@@ -1,4 +1,13 @@
 
+0.0.5 / 2016-05-23
+==================
+
+  * changed restart policy to on-failure:5
+  * added api endpoints for /api/running and /api/details
+  * expose docker on server object
+  * added a filter function to docker
+  * added shipment=deploy label to deployed containers
+
 0.0.4 / 2016-05-21
 ==================
 
