@@ -1,4 +1,9 @@
 
+0.0.9 / 2016-06-06
+==================
+
+  * Updating max buffer on docker.cmd to 1000K, or roughly 1M
+
 0.0.8 / 2016-05-25
 ==================
 
