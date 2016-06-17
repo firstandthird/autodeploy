@@ -11,8 +11,6 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
 #DOCKER
 RUN curl -sSL https://get.docker.com/ | sed 's/docker-engine/docker-engine=1.10.3-0~trusty/' | sh
 
-VOLUME /root/.npm
-
 #NODEMON
 RUN npm i -g nodemon
 
