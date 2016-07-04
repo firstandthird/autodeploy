@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shipment Running Containers</title>
+  </head>
+  <body>
+    <table data-module="running">
+      <thead>
+        <tr>
+          <td>Org</td>
+          <td>Repo</td>
+          <td>Branch</td>
+          <td>Redeploy</td>
+          <td>Remove</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each running}}
+        <tr>
+          <td>{{org}}</td>
+          <td>{{repo}}</td>
+          <td>{{branch}}</td>
+          <td><button data-action="redeploy" data-action-org="{{org}}" data-action-repo="{{repo}}" data-action-branch="{{branch}}">Redeploy</button></td>
+          <td><button data-action="remove" data-action-org="{{org}}" data-action-repo="{{repo}}" data-action-branch="{{branch}}">Remove</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div data-module="deploy">
+      <h3>Deploy</h3>
+      <form data-name="form">
+        <label for="deploy-org">Org</label>
+        <input type="text" id="deploy-org" data-name="org" requrired/>
+        <label for="deploy-repo">Repo</label>
+        <input type="text" id="deploy-repo" data-name="repo" requrired/>
+        <label for="deploy-branch">Branch</label>
+        <input type="text" id="deploy-branch" data-name="branch" value="master" requrired/>
+        <input type="submit" value="Deploy"/>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/firstandthird/data-attrs/master/dist/data-attrs.js"></script>
+    <script>
+      var secret = '{{secret}}';
+      $.module('running', function(el, values, els) {
+        $.action({
+          redeploy: function(e, values) {
+            var el = $(this);
+            $.post('/deploy', {
+              org: values.org,
+              repo: values.repo,
+              branch: values.branch,
+              secret: secret
+            }, function() {
+              window.location.reload();
+            });
+          },
+          remove: function(e, values) {
+            var el = $(this);
+            $.post('/remove', {
+              org: values.org,
+              repo: values.repo,
+              branch: values.branch,
+              secret: secret
+            }, function() {
+              window.location.reload();
+            });
+          }
+        }, el);
+      });
+
+      $.module('deploy', function(el, values, els) {
+        els.form.on('submit', function(e) {
+          e.preventDefault();
+          $.post('/deploy', {
+            org: els.org.val(),
+            repo: els.repo.val(),
+            branch: els.branch.val(),
+            secret: secret
+          }, function() {
+            window.location.reload();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

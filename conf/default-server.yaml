@@ -1,2 +1,9 @@
 plugins:
+  vision:
   './server-plugins/setup':
+    _priority: -3
+
+views:
+  path: '{{CWD}}/views'
+  engines:
+    html: 'handlebars'
