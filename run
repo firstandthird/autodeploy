@@ -1,0 +1,29 @@
+#!/bin/bash
+
+NAME=deploy_server_1
+CMD=$1
+
+if [[ -z "$CMD" ]]; then
+  docker-compose up
+fi
+
+if [[ "$CMD" == "shell" ]]; then
+  docker-compose run --rm app sh
+fi
+
+if [[ "$CMD" == "enter" ]]; then
+  docker exec -it $NAME sh
+fi
+
+if [[ "$CMD" == "npmi" ]]; then
+  docker exec -it $NAME npm install
+  touch conf/default.yaml
+fi
+
+if [[ "$CMD" == "lint" ]]; then
+  docker-compose run --rm server npm run lint
+fi
+
+if [[ "$CMD" == "build" ]]; then
+  docker-compose build
+fi
