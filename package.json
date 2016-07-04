@@ -22,6 +22,8 @@
     "async": "2.0.0-rc.4",
     "handlebars": "4.0.5",
     "vision": "4.1.0",
+    "hapi-password": "1.1.0",
+    "hapi-strategy-loader": "0.1.0",
     "rapptor": "1.1.0",
     "varson": "0.1.0",
     "obj2args": "0.0.1"

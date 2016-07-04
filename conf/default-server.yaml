@@ -1,4 +1,20 @@
 plugins:
+  hapi-password:
+    _priority: -2
+  hapi-strategy-loader:
+    _priority: -2
+    strategies:
+      admin:
+        scheme: 'password'
+        mode: false
+        options:
+          successEndpoint: '/ui'
+          password: '{{secret}}'
+          salt: 'asldkjqweljwije01j2lkemaslkj09jkljasdm1oie'
+          cookieName: 'deploy'
+          ttl: '{{1000 * 60 * 24 * 30}}'
+          loginForm:
+            name: 'Shipment/Deploy'
   vision:
   './server-plugins/setup':
     _priority: -3

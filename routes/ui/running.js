@@ -2,6 +2,7 @@ exports.running = {
   path: '/ui',
   method: 'GET',
   config: {
+    auth: 'admin',
     pre: [
       { assign: 'ids', method: 'docker.running()' },
       { assign: 'running', method: 'docker.info(pre.ids)' },
