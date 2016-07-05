@@ -6,7 +6,6 @@ exports.register = function(server, options, next) {
   const url = options.url;
 
   const check = function() {
-    console.log('check');
     wreck.get(url, {
       json: true
     }, (err, res, payload) => {
