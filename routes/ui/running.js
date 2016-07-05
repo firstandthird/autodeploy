@@ -1,3 +1,4 @@
+const _ = require('lodash');
 exports.running = {
   path: '/ui',
   method: 'GET',
@@ -10,17 +11,26 @@ exports.running = {
   },
   handler(request, reply) {
     const server = request.server;
-    const data = request.pre.running.map((info) => {
-      return {
-        org: info.Config.Labels['shipment-org'],
-        repo: info.Config.Labels['shipment-repo'],
-        branch: info.Config.Labels['shipment-branch'],
-        image: info.Config.Image,
-        id: info.Id
+    const data = {};
+    request.pre.running.forEach((info) => {
+      const image = info.Config.Image;
+      const labels = info.Config.Labels;
+      if (!data[image]) {
+        data[image] = {
+          org: labels['shipment-org'],
+          repo: labels['shipment-repo'],
+          branch: labels['shipment-branch'],
+          image,
+          containers: []
+        };
       }
+      data[image].containers.push({
+        id: info.Id,
+        name: info.Name.substr(1)
+      });
     });
     reply.view('running', {
-      running: data,
+      groups: data,
       secret: server.settings.app.secret
     });
   }

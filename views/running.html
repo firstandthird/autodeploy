@@ -3,8 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Shipment Running Containers</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style>
+      table {
+        width: 100%
+      }
+    </style>
   </head>
   <body>
+    <h3>Running Containers</h3>
     <table data-module="running">
       <thead>
         <tr>
@@ -16,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        {{#each running}}
+        {{#each groups}}
         <tr>
           <td>{{org}}</td>
           <td>{{repo}}</td>
@@ -24,6 +32,12 @@
           <td><button data-action="redeploy" data-action-org="{{org}}" data-action-repo="{{repo}}" data-action-branch="{{branch}}">Redeploy</button></td>
           <td><button data-action="remove" data-action-org="{{org}}" data-action-repo="{{repo}}" data-action-branch="{{branch}}">Remove</button></td>
         </tr>
+        {{#each containers}}
+        <tr>
+          <td></td>
+          <td colspan="4">{{name}}</td>
+        </tr>
+        {{/each}}
         {{/each}}
       </tbody>
     </table>
@@ -38,6 +52,11 @@
         <input type="text" id="deploy-branch" data-name="branch" value="master" requrired/>
         <input type="submit" value="Deploy"/>
       </form>
+    </div>
+    <div data-module="autodeploy">
+      <h3>Auto Deploy</h3>
+      <input data-name="url" type="text" readonly />
+      <input data-name="secret" type="text" readonly />
     </div>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
@@ -83,6 +102,15 @@
             window.location.reload();
           });
         });
+      });
+
+      $.module('autodeploy', function(el, values, els) {
+        var url = window.location.href;
+        url = url.substr(0, url.length - 2) + 'github';
+        els.url.val(url);
+        els.secret.val(secret);
+        els.url.on('focus', function() { $(this).select() });
+        els.secret.on('focus', function() { $(this).select() });
       });
     </script>
   </body>
