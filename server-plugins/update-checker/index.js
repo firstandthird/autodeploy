@@ -11,7 +11,7 @@ exports.register = function(server, options, next) {
     }, (err, res, payload) => {
       payload = JSON.parse(payload);
       if (payload.version !== pkg.version) {
-        server.log(['update-checker', 'notice'], { message: 'Deploy is out of date', installedVersion: pkg.version, newestVersion: payload.version });
+        server.log(['update-checker', 'notice', 'warning'], { message: 'Deploy is out of date', installedVersion: pkg.version, newestVersion: payload.version });
       }
     });
   };
