@@ -21,6 +21,17 @@ plugins:
   './server-plugins/update-checker':
     url: 'https://raw.githubusercontent.com/shipment/deploy/master/package.json'
     interval: '{{ 1000 * 60 * 60 * 24 }}'
+  hapi-slack:
+    _priority: -1
+    _enabled: '{{ENV.SLACK || false}}'
+    slackHook: '{{ENV.SLACK}}'
+    additionalTags:
+      - 'deploy'
+    tags:
+      - 'warning'
+      - 'success'
+      - 'error'
+      - 'notice'
 
 views:
   path: '{{CWD}}/views'

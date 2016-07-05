@@ -9,6 +9,7 @@ server:
     GH_TOKEN:
     SECRET:
     BRANCH_WHITELIST:
+    SLACK:
   ports:
     - '8080:5000'
   volumes:
