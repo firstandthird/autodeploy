@@ -1,4 +1,19 @@
 
+0.0.10 / 2016-07-05
+==================
+
+  * added hapi-slack support. pass in SLACK webhook as env var
+  * added warning tag to update-checker log
+  * update checker
+  * group running containers and show auto deploy url
+  * added password protect to admin page
+  * redirect / to /ui
+  * added run script
+  * added a basic admin ui
+  * added more labels
+  * update rapptor to 1.1.0
+  * removed volume in dockerfile
+
 0.0.9 / 2016-06-06
 ==================
 
