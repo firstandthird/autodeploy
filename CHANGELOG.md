@@ -1,4 +1,10 @@
 
+0.0.12 / 2016-07-06
+==================
+
+  * fix for errors happing up the ladder and throwing inside read config
+  * BREAKING: removed folder functionality, added dockerfile support in config. Note: build is always done from root folder
+
 0.0.11 / 2016-07-05
 ==================
 
