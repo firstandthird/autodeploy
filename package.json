@@ -25,7 +25,7 @@
     "vision": "4.1.0",
     "hapi-password": "1.1.0",
     "hapi-strategy-loader": "0.1.0",
-    "hapi-slack": "0.1.0",
+    "hapi-slack": "0.2.1",
     "rapptor": "1.1.0",
     "varson": "0.1.0",
     "wreck": "8.0.0",
