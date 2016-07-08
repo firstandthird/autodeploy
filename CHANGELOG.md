@@ -1,5 +1,5 @@
 
-0.0.13 / 2016-07-08
+0.0.15 / 2016-07-08
 ==================
 
   * if e.VIRTUAL_HOST set in docker args, then output it as the url of the   log
