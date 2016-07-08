@@ -1,4 +1,12 @@
 
+0.0.13 / 2016-07-08
+==================
+
+  * if e.VIRTUAL_HOST set in docker args, then output it as the url of the   log
+  * better error logging
+  * moved arg parsing into docker so its easier to set additional params
+  * updated slack integration. better output and messages
+
 0.0.12 / 2016-07-06
 ==================
 
