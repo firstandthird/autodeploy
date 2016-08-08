@@ -2,6 +2,11 @@
 exports.github = {
   method: '*',
   path: '/github',
+  config: {
+    payload: {
+      parse: false
+    }
+  },
   handler: (request, reply) => {
     const server = request.server;
     server.githubHook.parse(request.headers, request.payload, (err, deploy) => {
