@@ -1,4 +1,11 @@
 
+0.0.16 / 2016-08-08
+==================
+
+  * hide tags when sending to slack
+  * more consistent logging format
+  * fixed signature comparison when using special characters
+
 0.0.15 / 2016-07-08
 ==================
 
