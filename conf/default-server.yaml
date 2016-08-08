@@ -26,8 +26,7 @@ plugins:
     _enabled: '{{ENV.SLACK || false}}'
     slackHook: '{{ENV.SLACK}}'
     username: 'Shipment'
-    additionalTags:
-      - 'deploy'
+    hideTags: true
     tags:
       - 'warning'
       - 'success'
