@@ -25,7 +25,7 @@ plugins:
     _priority: -1
     _enabled: '{{ENV.SLACK || false}}'
     slackHook: '{{ENV.SLACK}}'
-    username: 'Shipment'
+    username: '{{ENV.SLACK_USER || "Shipment"}}'
     hideTags: true
     tags:
       - 'warning'
