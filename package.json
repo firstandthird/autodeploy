@@ -14,21 +14,21 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint": "^2.9.0",
-    "eslint-config-airbnb": "^8.0.0",
-    "eslint-config-firstandthird": "^2.0.0"
+    "eslint": "3.7.1",
+    "eslint-config-firstandthird": "3.0.2",
+    "eslint-plugin-import": "1.14.0"
   },
   "dependencies": {
-    "async": "2.0.0-rc.4",
-    "lodash": "4.13.1",
+    "async": "2.0.1",
+    "lodash": "4.16.3",
     "handlebars": "4.0.5",
     "vision": "4.1.0",
     "hapi-password": "1.1.0",
-    "hapi-strategy-loader": "0.1.0",
+    "hapi-strategy-loader": "0.2.0",
     "hapi-slack": "0.2.1",
-    "rapptor": "1.1.0",
-    "varson": "0.1.0",
-    "wreck": "8.0.0",
+    "rapptor": "1.2.0",
+    "varson": "0.4.0",
+    "wreck": "10.0.0",
     "obj2args": "0.0.1"
   }
 }
