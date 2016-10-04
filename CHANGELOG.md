@@ -1,4 +1,10 @@
 
+0.0.17 / 2016-10-04
+==================
+
+  * add support for setting slack username
+  * reset submodule on deployment
+
 0.0.16 / 2016-08-08
 ==================
 
