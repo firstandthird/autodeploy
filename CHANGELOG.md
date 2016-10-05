@@ -1,4 +1,12 @@
 
+0.0.19 / 2016-10-05
+==================
+
+  * be able to set what branch gets root domain
+  * support multiple virtual urls when logging
+  * set VIRTUAL_HOST automatically
+  * support for env based scaling
+
 0.0.18 / 2016-10-04
 ==================
 
