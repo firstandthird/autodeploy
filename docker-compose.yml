@@ -11,6 +11,7 @@ server:
     BRANCH_WHITELIST:
     SLACK:
     SLACK_USER:
+    DOMAIN:
   ports:
     - '8080:5000'
   volumes:
