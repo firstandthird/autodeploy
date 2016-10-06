@@ -1,4 +1,10 @@
 
+0.0.20 / 2016-10-06
+==================
+
+  * updated to hapi-password 2
+  * updated cookies to allow insecure
+
 0.0.19 / 2016-10-05
 ==================
 
