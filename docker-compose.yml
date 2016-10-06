@@ -12,6 +12,7 @@ server:
     SLACK:
     SLACK_USER:
     DOMAIN:
+    LETSENCRYPT_EMAIL:
   ports:
     - '8080:5000'
   volumes:
