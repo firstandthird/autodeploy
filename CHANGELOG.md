@@ -1,4 +1,9 @@
 
+0.0.21 / 2016-10-06
+==================
+
+  * add support for setting LETSENCRYPT_HOST with https: true
+
 0.0.20 / 2016-10-06
 ==================
 
