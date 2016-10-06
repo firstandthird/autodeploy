@@ -1,3 +1,6 @@
+connection:
+  state:
+    isSecure: false
 plugins:
   hapi-password:
     _priority: -2
