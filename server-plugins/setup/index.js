@@ -9,7 +9,8 @@ exports.register = function(server, options, next) {
   }
 
   config.branchWhitelist = config.branchWhitelist ? config.branchWhitelist.split(',') : [];
-  const deploy = new Deploy(config.env, config.repoPath, config.sharedConfigPath, config.username, config.token, server.log.bind(server));
+  const env = process.env.DEPLOY_ENV || config.env;
+  const deploy = new Deploy(env, config.repoPath, config.sharedConfigPath, config.username, config.token, server.log.bind(server));
   const githubHook = new GithubHook(config.secret, config.branchWhitelist, server.log.bind(server));
 
   server.decorate('server', 'deploy', deploy);
