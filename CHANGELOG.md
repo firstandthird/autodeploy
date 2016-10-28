@@ -1,4 +1,9 @@
 
+0.0.23 / 2016-10-28
+==================
+
+  * added support for setting whitelist in deploy.json
+
 0.0.22 / 2016-10-28
 ==================
 
