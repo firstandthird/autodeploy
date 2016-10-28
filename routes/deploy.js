@@ -8,7 +8,7 @@ exports.deploy = {
     const repo = request.payload.repo;
     const branch = request.payload.branch || 'master';
     const secret = request.payload.secret;
-    const configFile = request.payload.config || 'deploy.json';
+    const configFile = request.payload.config;
     if (secret !== server.settings.app.secret) {
       return reply('invalid secret').code(401);
     }
