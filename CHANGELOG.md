@@ -1,4 +1,19 @@
 
+0.0.22 / 2016-10-28
+==================
+
+  * update host to be branch based
+  * change scale to be based on branch instead of env
+  * set NODE_ENV to production by default
+  * allow passing DEPLOY_ENV to compose
+  * log out some info when the server starts
+  * use DEPLOY_ENV instead of NODE_ENV
+  * container name numbers go to 1000
+  * auto read deploy.json file from DEPLOY_ENV.  deploy.stage.json
+  * better error checking for update-checker
+  * set up dev env for nginx-proxy
+  * log ping notice
+
 0.0.21 / 2016-10-06
 ==================
 
