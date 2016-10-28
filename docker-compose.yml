@@ -5,6 +5,7 @@ server:
   environment:
     VIRTUAL_HOST: 'deploy.*'
     NODE_ENV: 'dev'
+    DEPLOY_ENV:
     PORT: 5000
     GH_USERNAME:
     GH_TOKEN:
