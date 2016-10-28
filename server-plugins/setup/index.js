@@ -17,6 +17,13 @@ exports.register = function(server, options, next) {
   server.decorate('server', 'docker', deploy.docker);
   server.decorate('server', 'githubHook', githubHook);
 
+  server.log(['info', 'deploy'], {
+    message: 'Deploy Configured',
+    env,
+    domain: process.env.DOMAIN,
+    githubUser: config.username
+  });
+
   next();
 };
 
