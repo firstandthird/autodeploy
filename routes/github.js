@@ -33,6 +33,7 @@ exports.github = {
           repo: deploy.repo,
           branch: deploy.branch,
           secret: server.settings.app.secret,
+          whitelist: request.query.whitelist,
           config: configFile
         }
       }, (res) => {
