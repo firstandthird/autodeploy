@@ -1,4 +1,11 @@
 
+0.0.24 / 2016-11-04
+==================
+
+  * move whitelist check to url endpoint instead of config
+  * updated deps
+  * fixed error logging
+
 0.0.23 / 2016-10-28
 ==================
 
